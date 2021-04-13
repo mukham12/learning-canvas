@@ -53,47 +53,65 @@ const drawScreen = () => {
 }
 */
 
+/*
 function drawScreen() {
   context.setTransform(1, 0, 0, 1, 0, 0)
-  var angleInRadians = (45 * Math.PI) / 180
-  var x = 50
-  var y = 100
-  var width = 40
-  var height = 40
+  let angleInRadians = (45 * Math.PI) / 180
+  let x = 50
+  let y = 100
+  let width = 40
+  let height = 40
   context.translate(x + 0.5 * width, y + 0.5 * height)
   context.rotate(angleInRadians)
   context.fillStyle = 'red'
   context.fillRect(-0.5 * width, -0.5 * height, width, height)
 
   context.setTransform(1, 0, 0, 1, 0, 0)
-  var angleInRadians = (75 * Math.PI) / 180
+  let angleInRadians = (75 * Math.PI) / 180
+  let x = 100
+  let y = 100
+  let width = 40
+  let height = 40
+  context.translate(x + 0.5 * width, y + 0.5 * height)
+  context.rotate(angleInRadians)
+  context.fillStyle = 'red'
+  context.fillRect(-0.5 * width, -0.5 * height, width, height)
+  context.setTransform(1, 0, 0, 1, 0, 0)
+
+  let angleInRadians = (90 * Math.PI) / 180
+  let x = 150
+  let y = 100
+  let width = 40
+  let height = 40
+  context.translate(x + 0.5 * width, y + 0.5 * height)
+  context.rotate(angleInRadians)
+  context.fillStyle = 'red'
+  context.fillRect(-0.5 * width, -0.5 * height, width, height)
+  context.setTransform(1, 0, 0, 1, 0, 0)
+  let angleInRadians = (120 * Math.PI) / 180
+  let x = 200
+  let y = 100
+  let width = 40
+  let height = 40
+  context.translate(x + 0.5 * width, y + 0.5 * height)
+  context.rotate(angleInRadians)
+  context.fillStyle = 'red'
+  context.fillRect(-0.5 * width, -0.5 * height, width, height)
+}
+*/
+
+// Scaling and rotation of a nonsquare object
+const drawScreen = () => {
+  context.setTransform(1, 0, 0, 1, 0, 0)
+  var angleInRadians = (90 * Math.PI) / 180
   var x = 100
   var y = 100
-  var width = 40
-  var height = 40
+  var width = 100
+  var height = 50
   context.translate(x + 0.5 * width, y + 0.5 * height)
   context.rotate(angleInRadians)
-  context.fillStyle = 'red'
-  context.fillRect(-0.5 * width, -0.5 * height, width, height)
-  context.setTransform(1, 0, 0, 1, 0, 0)
-
-  var angleInRadians = (90 * Math.PI) / 180
-  var x = 150
-  var y = 100
-  var width = 40
-  var height = 40
-  context.translate(x + 0.5 * width, y + 0.5 * height)
-  context.rotate(angleInRadians)
-  context.fillStyle = 'red'
-  context.fillRect(-0.5 * width, -0.5 * height, width, height)
-  context.setTransform(1, 0, 0, 1, 0, 0)
-  var angleInRadians = (120 * Math.PI) / 180
-  var x = 200
-  var y = 100
-  var width = 40
-  var height = 40
-  context.translate(x + 0.5 * width, y + 0.5 * height)
-  context.rotate(angleInRadians)
+  context.scale(2, 2)
+  
   context.fillStyle = 'red'
   context.fillRect(-0.5 * width, -0.5 * height, width, height)
 }
