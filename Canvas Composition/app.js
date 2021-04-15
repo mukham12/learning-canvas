@@ -149,6 +149,7 @@ const drawScreen = () => {
 */
 
 // Radial gradient (circular gradient, as opposed to linear shown above)
+/*
 const drawScreen = () => {
   let gr = context.createRadialGradient(50, 50, 25, 50, 50, 100)
 
@@ -158,4 +159,22 @@ const drawScreen = () => {
 
   context.fillStyle = gr
   context.fillRect(0, 0, 200, 200)
+}
+*/
+
+/* We can also fill shapes with certain patterns 
+There are currently four types of image fills: 
+1. repeat
+2. repeat - x
+3. repeat - y
+4. no - repeat
+*/
+const drawScreen = () => {
+  let fillImg = new Image()
+  fillImg.src = 'fill_20x20.gif' // The path to the image
+  fillImg.onload = function () {
+    let fillPattern = context.createPattern(fillImg, 'repeat')
+    context.fillStyle = fillPattern
+    context.fillRect(0, 0, 200, 200)
+  }
 }
