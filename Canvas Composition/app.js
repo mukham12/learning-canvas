@@ -131,4 +131,17 @@ const drawScreen = () => {
   // Use the gradient for the fillstyle
   context.fillStyle = gr
   context.fillRect(0, 0, 100, 100)
+
+  // The gradients can be applied to anything, from complex shapes to outlining the borders of the shapes:
+  context.fillStyle = gr
+  context.beginPath()
+  context.moveTo(0, 0)
+  context.lineTo(50, 0)
+  context.lineTo(100, 50)
+  context.lineTo(50, 100)
+  context.lineTo(0, 100)
+  context.lineTo(0, 0)
+  context.stroke()
+  context.fill()
+  context.closePath()
 }
