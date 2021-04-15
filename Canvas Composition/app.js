@@ -101,6 +101,7 @@ function drawScreen() {
 */
 
 // Scaling and rotation of a nonsquare object
+/*
 const drawScreen = () => {
   context.setTransform(1, 0, 0, 1, 0, 0)
   var angleInRadians = (90 * Math.PI) / 180
@@ -114,4 +115,20 @@ const drawScreen = () => {
   
   context.fillStyle = 'red'
   context.fillRect(-0.5 * width, -0.5 * height, width, height)
+}
+*/
+
+// Learning linear and radial gradients
+const drawScreen = () => {
+  // Creating a horizontal gradient
+  let gr = context.createLinearGradient(0, 0, 100, 0)
+
+  // Add the color stops
+  gr.addColorStop(0, 'rgb(255,0,0)')
+  gr.addColorStop(0.5, 'rgb(0,255,0)')
+  gr.addColorStop(1, 'rgb(255,0,0)')
+
+  // Use the gradient for the fillstyle
+  context.fillStyle = gr
+  context.fillRect(0, 0, 100, 100)
 }
