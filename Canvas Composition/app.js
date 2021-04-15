@@ -119,6 +119,7 @@ const drawScreen = () => {
 */
 
 // Learning linear and radial gradients
+/*
 const drawScreen = () => {
   // Creating a horizontal gradient
   let gr = context.createLinearGradient(0, 0, 100, 0)
@@ -144,4 +145,17 @@ const drawScreen = () => {
   context.stroke()
   context.fill()
   context.closePath()
+}
+*/
+
+// Radial gradient (circular gradient, as opposed to linear shown above)
+const drawScreen = () => {
+  let gr = context.createRadialGradient(50, 50, 25, 50, 50, 100)
+
+  gr.addColorStop(0, 'rgb(255,0,0)')
+  gr.addColorStop(0.5, 'rgb(0,255,0)')
+  gr.addColorStop(1, 'rgb(255,0,0)')
+
+  context.fillStyle = gr
+  context.fillRect(0, 0, 200, 200)
 }
