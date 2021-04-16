@@ -182,6 +182,7 @@ const drawScreen = () => {
 */
 
 // Creating shadows for shapes and blurring them
+/*
 const drawScreen = () => {
   context.fillStyle = 'red'
   context.shadowOffsetX = -4
@@ -206,4 +207,23 @@ const drawScreen = () => {
   context.shadowBlur = 8
   context.arc(200, 300, 100, (Math.PI / 180) * 0, (Math.PI / 180) * 360, false)
   context.fill()
+}
+*/
+
+// Exploring the ways of clearing the canvas
+const drawScreen = () => {
+  // We can clear the screen just by filling it in white:
+  context.fillStyle = '000000'
+  context.fillRect(0, 0, canvas.width, canvas.height)
+
+  // When the canvas width or height (or both) are reset, the current contents of the Canvas are removed:
+  let w = canvas.width
+  let h = canvas.height
+  canvas.width = w
+  canvas.height = h
+
+  // Another technique is to use the clearRect() function
+  let w = canvas.width
+  let h = canvas.height
+  context.clearRect(0, 0, w, h)
 }
