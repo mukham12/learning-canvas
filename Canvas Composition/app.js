@@ -227,3 +227,15 @@ const drawScreen = () => {
   let h = canvas.height
   context.clearRect(0, 0, w, h)
 }
+
+context.strokeStyle = 'red'
+context.lineWidth = 5
+context.moveTo(0, 0)
+context.lineTo(50, 0)
+context.lineTo(50, 50)
+context.stroke()
+var isPoint1InPath1 = context.isPointInPath(0, 0)
+var isPoint1InPath2 = context.isPointInPath(10, 10)
+console.log('isPoint1InPath1=' + isPoint1InPath1)
+console.log('isPoint1InPath2=' + isPoint1InPath2)
+context.closePath()
