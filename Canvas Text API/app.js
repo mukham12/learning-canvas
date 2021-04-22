@@ -18,3 +18,6 @@ let message = 'your text'
 // }
 
 let metrics = context.measureText(message)
+
+let textWidth = metrics.width
+let xPosition = theCanvas.width / 2 - textWidth / 2
