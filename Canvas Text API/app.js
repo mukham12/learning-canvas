@@ -1,6 +1,9 @@
 let canvas = document.getElementById('my-canvas')
 let context = canvas.getContext('2d')
 
-context.font = '50px serif'
-context.fillStyle = '#FF0000'
-context.fillText('Hello World', 100, 80)
+let message = 'your text'
+const drawScreen = () => {
+  context.font = '50px serif'
+  context.fillText(message, 100, 80)
+  context.fillStyle = '#FF0000'
+}
