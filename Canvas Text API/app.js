@@ -52,3 +52,41 @@ switch (fillOrStroke) {
     context.strokeText(message, xPosition, yPosition)
     break
 }
+
+let fontSize = '50'
+let fontFace = 'serif'
+let fontWeight = 'normal'
+let fontStyle = 'normal'
+
+const canvasApp = () => {
+  formElement = document.getElementById('textSize')
+  formElement.addEventListener('change', textSizeChanged, false)
+  formElement = document.getElementById('textFont')
+  formElement.addEventListener('change', textFontChanged, false)
+  formElement = document.getElementById('fontWeight')
+  formElement.addEventListener('change', fontWeightChanged, false)
+  formElement = document.getElementById('fontStyle')
+  formElement.addEventListener('change', fontStyleChanged, false)
+}
+
+const textSizeChanged = (e) => {
+  let target = e.target
+  fontSize = target.value
+  drawScreen()
+}
+
+const textFontChanged = (e) => {
+  var target = e.target
+  fontFace = target.value
+  drawScreen()
+}
+const fontWeightChanged = (e) => {
+  var target = e.target
+  fontWeight = target.value
+  drawScreen()
+}
+const fontStyleChanged = (e) => {
+  var target = e.target
+  fontStyle = target.value
+  drawScreen()
+}
