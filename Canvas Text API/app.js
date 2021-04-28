@@ -1,15 +1,10 @@
 let canvas = document.getElementById('my-canvas')
 let context = canvas.getContext('2d')
 
-let message = 'your text'
+let message = 'Your Text'
 const drawScreen = () => {
-  context.font = '50px serif'
-  context.fillText(message, 100, 80)
-  context.fillStyle = '#FF0000'
+  context.font = fontWeight + ' ' + fontStyle + ' ' + fontSize + 'px ' + fontFace
 }
-
-let formElement = document.getElementById('textBox')
-formElement.addEventListener('keyup', textBoxChanged, false)
 
 const textBoxChanged = (e) => {
   let target = e.target
@@ -17,25 +12,24 @@ const textBoxChanged = (e) => {
   drawScreen()
 }
 
-let metrics = context.measureText(message)
-
-let textWidth = metrics.width
-let xPosition = theCanvas.width / 2 - textWidth / 2
+let formElement = document.getElementById('textBox')
+formElement.addEventListener('keyup', textBoxChanged, false)
 
 let fillOrStroke = 'fill'
 
-formElement = document.getElementById('fillOrStroke')
-formElement.addEventListener('change', fillOrStrokeChanged, false)
 const fillOrStrokeChanged = (e) => {
   let target = e.target
   fillOrStroke = target.value
   drawScreen()
 }
 
+formElement = document.getElementById('fillOrStroke')
+formElement.addEventListener('change', fillOrStrokeChanged, false)
+
 let metrics = context.measureText(message)
 let textWidth = metrics.width
-let xPosition = theCanvas.width / 2 - textWidth / 2
-let yPosition = theCanvas.height / 2
+let xPosition = canvas.width / 2 - textWidth / 2
+let yPosition = canvas.height / 2
 switch (fillOrStroke) {
   case 'fill':
     context.fillStyle = '#FF0000'
