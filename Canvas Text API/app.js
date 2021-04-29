@@ -4,6 +4,8 @@ let context = canvas.getContext('2d')
 let message = 'Your Text'
 const drawScreen = () => {
   context.font = fontWeight + " " + fontStyle + " " + fontSize + "px " + fontFace
+  context.textBaseline = textBaseline
+  context.textAlign = textAlign
 }
 
 let formElement = document.getElementById('textBox')
@@ -79,7 +81,16 @@ const canvasApp = () => {
   formElement.addEventListener('change', fontStyleChanged, false)
 }
 
+let textBaseline = 'middle'
+let textAlign = 'center'
+
 formElement = document.getElementById('textBaseline')
-formElement.addEventListener('change', textBaselineChanged, false)
+formElement.addEventListener('change', (e) => {
+  textBaseline = e.target.value
+  drawScreen()
+}, false)
 formElement = document.getElementById('textAlign')
-formElement.addEventListener('change', textAlignChanged, false)
+formElement.addEventListener('change', (e) => {
+  textAlign = e.target.value
+  drawScreen()
+}, false)
