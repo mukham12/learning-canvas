@@ -3,28 +3,25 @@ let context = canvas.getContext('2d')
 
 let message = 'Your Text'
 const drawScreen = () => {
-  context.font = fontWeight + ' ' + fontStyle + ' ' + fontSize + 'px ' + fontFace
-}
-
-const textBoxChanged = (e) => {
-  let target = e.target
-  message = target.value
-  drawScreen()
+  context.fillStyle = '#FF0000'
+  context.fillText(message, 100, 80)
 }
 
 let formElement = document.getElementById('textBox')
-formElement.addEventListener('keyup', textBoxChanged, false)
+formElement.addEventListener('keyup', (e) => {
+  let target = e.target
+  message = target.value
+  drawScreen()
+}, false)
 
 let fillOrStroke = 'fill'
 
-const fillOrStrokeChanged = (e) => {
+formElement = document.getElementById('fillOrStroke')
+formElement.addEventListener('change', (e) => {
   let target = e.target
   fillOrStroke = target.value
   drawScreen()
-}
-
-formElement = document.getElementById('fillOrStroke')
-formElement.addEventListener('change', fillOrStrokeChanged, false)
+}, false)
 
 let metrics = context.measureText(message)
 let textWidth = metrics.width
@@ -52,6 +49,26 @@ let fontFace = 'serif'
 let fontWeight = 'normal'
 let fontStyle = 'normal'
 
+const textSizeChanged = (e) => {
+  fontSize = e.target.value
+  drawScreen()
+}
+
+const textFontChanged = (e) => {
+  fontFace = e.target.value
+  drawScreen()
+}
+
+const fontWeightChanged = (e) => {
+  fontWeight = e.target.value
+  drawScreen()
+}
+
+const fontStyleChanged = (e) => {
+  fontStyle = e.target.value
+  drawScreen()
+}
+
 const canvasApp = () => {
   formElement = document.getElementById('textSize')
   formElement.addEventListener('change', textSizeChanged, false)
@@ -61,26 +78,4 @@ const canvasApp = () => {
   formElement.addEventListener('change', fontWeightChanged, false)
   formElement = document.getElementById('fontStyle')
   formElement.addEventListener('change', fontStyleChanged, false)
-}
-
-const textSizeChanged = (e) => {
-  let target = e.target
-  fontSize = target.value
-  drawScreen()
-}
-
-const textFontChanged = (e) => {
-  var target = e.target
-  fontFace = target.value
-  drawScreen()
-}
-const fontWeightChanged = (e) => {
-  var target = e.target
-  fontWeight = target.value
-  drawScreen()
-}
-const fontStyleChanged = (e) => {
-  var target = e.target
-  fontStyle = target.value
-  drawScreen()
 }
