@@ -3,8 +3,7 @@ let context = canvas.getContext('2d')
 
 let message = 'Your Text'
 const drawScreen = () => {
-  context.fillStyle = '#FF0000'
-  context.fillText(message, 100, 80)
+  context.font = fontWeight + " " + fontStyle + " " + fontSize + "px " + fontFace
 }
 
 let formElement = document.getElementById('textBox')
@@ -79,3 +78,8 @@ const canvasApp = () => {
   formElement = document.getElementById('fontStyle')
   formElement.addEventListener('change', fontStyleChanged, false)
 }
+
+formElement = document.getElementById('textBaseline')
+formElement.addEventListener('change', textBaselineChanged, false)
+formElement = document.getElementById('textAlign')
+formElement.addEventListener('change', textAlignChanged, false)
