@@ -94,3 +94,9 @@ formElement.addEventListener('change', (e) => {
   textAlign = e.target.value
   drawScreen()
 }, false)
+
+
+formElement = document.getElementById("textAlpha");formElement.addEventListener('change', (e) => {
+  textAlpha = e.target.value
+  drawScreen()
+}, false)
