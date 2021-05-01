@@ -79,6 +79,12 @@ const canvasApp = () => {
   formElement.addEventListener('change', fontWeightChanged, false)
   formElement = document.getElementById('fontStyle')
   formElement.addEventListener('change', fontStyleChanged, false)
+
+  var textAlpha = 1
+  var shadowX = 1
+  var shadowY = 1
+  var shadowBlur = 1
+  var shadowColor = '#707070'
 }
 
 let textBaseline = 'middle'
