@@ -101,7 +101,7 @@ formElement.addEventListener('change', (e) => {
   drawScreen()
 }, false)
 
-
+// Alpha color event listener 
 formElement = document.getElementById("textAlpha");formElement.addEventListener('change', (e) => {
   textAlpha = e.target.value
   drawScreen()
