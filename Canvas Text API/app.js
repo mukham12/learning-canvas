@@ -70,6 +70,11 @@ const fontStyleChanged = (e) => {
   drawScreen()
 }
 
+context.shadowColor = '#FF0000'
+context.shadowOffsetX = 5
+context.shadowOffsetY = 5
+context.shadowBlur = 2
+
 const canvasApp = () => {
   formElement = document.getElementById('textSize')
   formElement.addEventListener('change', textSizeChanged, false)
@@ -101,7 +106,7 @@ formElement.addEventListener('change', (e) => {
   drawScreen()
 }, false)
 
-
+// Alpha color event listener 
 formElement = document.getElementById("textAlpha");formElement.addEventListener('change', (e) => {
   textAlpha = e.target.value
   drawScreen()
