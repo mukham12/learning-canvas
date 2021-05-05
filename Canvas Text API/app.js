@@ -3,9 +3,7 @@ let context = canvas.getContext('2d')
 
 let message = 'Your Text'
 const drawScreen = () => {
-  context.font = fontWeight + " " + fontStyle + " " + fontSize + "px " + fontFace
-  context.textBaseline = textBaseline
-  context.textAlign = textAlign
+  
 }
 
 let formElement = document.getElementById('textBox')
