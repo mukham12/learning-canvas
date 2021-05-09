@@ -117,7 +117,7 @@ const canvasApp = () => {
     if (fillType == 'colorFill') {
       tempColor = textFillColor
     } else if (fillType == 'linearGradient') {
-      var gradient = context.createLinearGradient(
+      let gradient = context.createLinearGradient(
         xPosition - textWidth / 2,
         yPosition,
         textWidth,
@@ -126,6 +126,69 @@ const canvasApp = () => {
       gradient.addColorStop(0, textFillColor)
       gradient.addColorStop(0.6, textFillColor2)
       tempColor = gradient
+    } else if (fillType == 'radialGradient') {
+      let gradient = context.createRadialGradient(
+        xPosition,
+        yPosition,
+        fontSize,
+        xPosition + textWidth,
+        yPosition,
+        1
+      )
+      gradient.addColorStop(0, textFillColor)
+      gradient.addColorStop(0.6, textFillColor2)
+      tempColor = gradient
+    } else if (fillType == 'pattern') {
+      let tempColor = context.createPattern(pattern, 'repeat')
+    } else {
+      tempColor = textFillColor
     }
+
+    switch (fillOrStroke) {
+      case 'fill':
+        context.fillStyle = tempColor
+        context.fillText(message, xPosition, yPosition)
+        break
+      case 'stroke':
+        context.strokeStyle = tempColor
+        context.strokeText(message, xPosition, yPosition)
+        break
+      case 'both':
+        context.fillStyle = tempColor
+        context.fillText(message, xPosition, yPosition)
+        context.strokeStyle = '#000000'
+        context.strokeText(message, xPosition, yPosition)
+        break
+    }
+  }
+
+  const textBoxChanged = (e) => {
+    message = e.target.value
+    drawScreen()
+  }
+
+  const textBaselineChanged = (e) => {
+    textBaseline = e.target.value
+    drawScreen()
+  }
+
+  const textAlignChanged = (e) => {
+    textAlign = e.target.value
+    drawScreen()
+  }
+
+  const fillOrStrokeChanged = (e) => {
+    fillOrStroke = e.target.value
+    drawScreen()
+  }
+
+  const textSizeChanged = (e) => {
+    fontSize = e.target.value
+    drawScreen()
+  }
+
+  const textFillColorChanged = (e) => {
+    textFillColor = '#' + e.target.value
+    drawScreen()
   }
 }
