@@ -107,8 +107,8 @@ const canvasApp = () => {
     context.shadowBlur = shadowBlur
     context.globalAlpha = textAlpha
 
-    let xPosition = theCanvas.width / 2
-    let yPosition = theCanvas.height / 2
+    let xPosition = canvas.width / 2
+    let yPosition = canvas.height / 2
 
     let metrics = context.measureText(message)
     let textWidth = metrics.width
@@ -190,5 +190,79 @@ const canvasApp = () => {
   const textFillColorChanged = (e) => {
     textFillColor = '#' + e.target.value
     drawScreen()
+  }
+
+  const textFontChanged = (e) => {
+    fontFace = e.target.value
+    drawScreen()
+  }
+
+  const fontWeightChanged = (e) => {
+    fontWeight = e.target.value
+    drawScreen()
+  }
+
+  const fontStyleChanged = (e) => {
+    fontStyle = e.target.value
+    drawScreen()
+  }
+
+  const shadowXChanged = (e) => {
+    shadowX = e.target.value
+    drawScreen()
+  }
+
+  const shadowYChanged = (e) => {
+    shadowY = e.target.value
+    drawScreen()
+  }
+
+  const shadowBlurChanged = (e) => {
+    shadowBlur = e.target.value
+    drawScreen()
+  }
+
+  const shadowColorChanged = (e) => {
+    shadowColor = e.target.value
+    drawScreen()
+  }
+
+  const textAlphaChanged = (e) => {
+    textAlpha = e.target.value
+    drawScreen()
+  }
+
+  const textFillColor2Changed = (e) => {
+    textFillColor2 = '#' + e.target.value
+    drawScreen()
+  }
+
+  const fillTypeChanged = (e) => {
+    fillType = e.target.value
+    drawScreen()
+  }
+
+  const canvasWidthChanged = (e) => {
+    canvas.width = e.target.value
+    drawScreen()
+  }
+
+  const canvasHeightChanged = (e) => {
+    canvas.height = e.target.value
+    drawScreen()
+  }
+
+  const canvasStyleSizeChanged = (e) => {
+    let styleWidth = document.getElementById('canvasStyleWidth')
+    let styleHeight = document.getElementById('canvasStyleHeight')
+    let styleValue = 'width:' + styleWidth.value + 'px; height:' + styleHeight.value + 'px;'
+    canvas.setAttribute('style', styleValue)
+    drawScreen()
+  }
+
+  const createImageDataPressed = (e) => {
+    let imageDataDisplay = document.getElementById('imageDataDisplay')
+    imageDataDisplay.value = canvas.toDataURL()
+    window.open(imageDataDisplay.value, 'canvasImage', 'left=0, top=0, width=' + canvas.width + ', height=' + canvas.height + ',toolbar=0,resizable=0')
   }
 }
