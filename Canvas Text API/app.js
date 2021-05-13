@@ -20,72 +20,6 @@ const canvasApp = () => {
   let canvas = document.getElementById('my-canvas')
   let context = canvas.getContext('2d')
 
-  let formElement = document.getElementById('textBox')
-  formElement.addEventListener('keyup', textBoxChanged, false)
-
-  formElement = document.getElementById('fillOrStroke')
-  formElement.addEventListener('change', fillOrStrokeChanged, false)
-
-  formElement = document.getElementById('textSize')
-  formElement.addEventListener('change', textSizeChanged, false)
-
-  formElement = document.getElementById('textFillColor')
-  formElement.addEventListener('change', textFillColorChanged, false)
-
-  formElement = document.getElementById('textFont')
-  formElement.addEventListener('change', textFontChanged, false)
-
-  formElement = document.getElementById('textBaseline')
-  formElement.addEventListener('change', textBaselineChanged, false)
-
-  formElement = document.getElementById('textAlign')
-  formElement.addEventListener('change', textAlignChanged, false)
-
-  formElement = document.getElementById('fontWeight')
-  formElement.addEventListener('change', fontWeightChanged, false)
-
-  formElement = document.getElementById('fontStyle')
-  formElement.addEventListener('change', fontStyleChanged, false)
-
-  formElement = document.getElementById('shadowX')
-  formElement.addEventListener('change', shadowXChanged, false)
-
-  formElement = document.getElementById('shadowY')
-  formElement.addEventListener('change', shadowYChanged, false)
-
-  formElement = document.getElementById('shadowBlur')
-  formElement.addEventListener('change', shadowBlurChanged, false)
-
-  formElement = document.getElementById('shadowColor')
-  formElement.addEventListener('change', shadowColorChanged, false)
-
-  formElement = document.getElementById('textAlpha')
-  formElement.addEventListener('change', textAlphaChanged, false)
-
-  formElement = document.getElementById('textFillColor2')
-  formElement.addEventListener('change', textFillColor2Changed, false)
-
-  formElement = document.getElementById('fillType')
-  formElement.addEventListener('change', fillTypeChanged, false)
-
-  formElement = document.getElementById('canvasWidth')
-  formElement.addEventListener('change', canvasWidthChanged, false)
-
-  formElement = document.getElementById('canvasHeight')
-  formElement.addEventListener('change', canvasHeightChanged, false)
-
-  formElement = document.getElementById('canvasStyleWidth')
-  formElement.addEventListener('change', canvasStyleSizeChanged, false)
-
-  formElement = document.getElementById('canvasStyleHeight')
-  formElement.addEventListener('change', canvasStyleSizeChanged, false)
-
-  formElement = document.getElementById('createImageData')
-  formElement.addEventListener('click', createImageDataPressed, false)
-
-  pattern.src = 'texture.jpg'
-  drawScreen()
-
   const drawScreen = () => {
     context.globalAlpha = 1
     context.shadowColor = '#707070'
@@ -265,4 +199,73 @@ const canvasApp = () => {
     imageDataDisplay.value = canvas.toDataURL()
     window.open(imageDataDisplay.value, 'canvasImage', 'left=0, top=0, width=' + canvas.width + ', height=' + canvas.height + ',toolbar=0,resizable=0')
   }
+
+  let formElement = document.getElementById('textBox')
+  formElement.addEventListener('keyup', textBoxChanged, false)
+
+  formElement = document.getElementById('fillOrStroke')
+  formElement.addEventListener('change', fillOrStrokeChanged, false)
+
+  formElement = document.getElementById('textSize')
+  formElement.addEventListener('change', textSizeChanged, false)
+
+  formElement = document.getElementById('textFillColor')
+  formElement.addEventListener('change', textFillColorChanged, false)
+
+  formElement = document.getElementById('textFont')
+  formElement.addEventListener('change', textFontChanged, false)
+
+  formElement = document.getElementById('textBaseline')
+  formElement.addEventListener('change', textBaselineChanged, false)
+
+  formElement = document.getElementById('textAlign')
+  formElement.addEventListener('change', textAlignChanged, false)
+
+  formElement = document.getElementById('fontWeight')
+  formElement.addEventListener('change', fontWeightChanged, false)
+
+  formElement = document.getElementById('fontStyle')
+  formElement.addEventListener('change', fontStyleChanged, false)
+
+  formElement = document.getElementById('shadowX')
+  formElement.addEventListener('change', shadowXChanged, false)
+
+  formElement = document.getElementById('shadowY')
+  formElement.addEventListener('change', shadowYChanged, false)
+
+  formElement = document.getElementById('shadowBlur')
+  formElement.addEventListener('change', shadowBlurChanged, false)
+
+  formElement = document.getElementById('shadowColor')
+  formElement.addEventListener('change', shadowColorChanged, false)
+
+  formElement = document.getElementById('textAlpha')
+  formElement.addEventListener('change', textAlphaChanged, false)
+
+  formElement = document.getElementById('textFillColor2')
+  formElement.addEventListener('change', textFillColor2Changed, false)
+
+  formElement = document.getElementById('fillType')
+  formElement.addEventListener('change', fillTypeChanged, false)
+
+  formElement = document.getElementById('canvasWidth')
+  formElement.addEventListener('change', canvasWidthChanged, false)
+
+  formElement = document.getElementById('canvasHeight')
+  formElement.addEventListener('change', canvasHeightChanged, false)
+
+  formElement = document.getElementById('canvasStyleWidth')
+  formElement.addEventListener('change', canvasStyleSizeChanged, false)
+
+  formElement = document.getElementById('canvasStyleHeight')
+  formElement.addEventListener('change', canvasStyleSizeChanged, false)
+
+  formElement = document.getElementById('createImageData')
+  formElement.addEventListener('click', createImageDataPressed, false)
+
+  pattern.src = 'texture.jpg'
+  drawScreen()
+
 }
+
+window.addEventListener('load', () => canvasApp(), false)
