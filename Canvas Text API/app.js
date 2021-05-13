@@ -265,7 +265,6 @@ const canvasApp = () => {
 
   pattern.src = 'texture.jpg'
   drawScreen()
-
 }
 
 window.addEventListener('load', () => canvasApp(), false)
