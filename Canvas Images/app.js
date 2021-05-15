@@ -11,3 +11,6 @@ const drawScreen = () => {
 }
 
 drawScreen()
+
+// The Canvas Pixel Manipulation API
+// The above API gives us the ability to "get", "put", and "change" individuals pixels, utilizing what is known as the CanvasPixelArray interface.
