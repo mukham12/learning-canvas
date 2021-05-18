@@ -23,6 +23,23 @@ const updateBall = () => {
   yunits = Math.sin(radians) * speed
 }
 
+var numBalls = 100
+var maxSize = 8
+var minSize = 5
+var maxSpeed = maxSize + 5
+var balls = new Array()
+
+var tempBall
+var tempX
+var tempY
+
+var tempSpeed
+var tempAngle
+var tempRadius
+var tempRadians
+var tempXunits
+var tempYunits
+
 const drawScreen = () => {
   context.strokeStyle = '#000000'
   context.strokeRect(1, 1, theCanvas.width - 2, theCanvas.height - 2)
