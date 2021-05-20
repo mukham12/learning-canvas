@@ -40,6 +40,27 @@ var tempRadians
 var tempXunits
 var tempYunits
 
+for (var i = 0; i < numBalls; i++) {
+  tempRadius = Math.floor(Math.random() * maxSize) + minSize
+  tempX = tempRadius * 2 + (Math.floor(Math.random() * theCanvas.width) - tempRadius * 2)
+  tempY = tempRadius * 2 + (Math.floor(Math.random() * theCanvas.height) - tempRadius * 2)
+  tempSpeed = maxSpeed - tempRadius
+  tempAngle = Math.floor(Math.random() * 360)
+  tempRadians = (tempAngle * Math.PI) / 180
+  tempXunits = Math.cos(tempRadians) * tempSpeed
+  tempYunits = Math.sin(tempRadians) * tempSpeed
+  tempBall = {
+    x: tempX,
+    y: tempY,
+    radius: tempRadius,
+    speed: tempSpeed,
+    ngle: tempAngle,
+    xunits: tempXunits,
+    yunits: tempYunits,
+  }
+  balls.push(tempBall)
+}
+
 const drawScreen = () => {
   context.strokeStyle = '#000000'
   context.strokeRect(1, 1, theCanvas.width - 2, theCanvas.height - 2)
