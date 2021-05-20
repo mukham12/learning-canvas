@@ -72,12 +72,21 @@ const drawScreen = () => {
   context.closePath()
   context.fill()
 
-  if (ball.x > theCanvas.width || ball.x < 0) {
-    angle = 180 - angle
-    updateBall()
-  } else if (ball.y > theCanvas.height || ball.y < 0) {
-    angle = 360 - angle
-    updateBall()
+  for (var i = 0; i < balls.length; i++) {
+    ball = balls[i]
+    ball.x += ball.xunits
+    ball.y += ball.yunits
+    context.beginPath()
+    context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2, true)
+    context.closePath()
+    context.fill()
+    if (ball.x > theCanvas.width || ball.x < 0) {
+      ball.angle = 180 - ball.angle
+      updateBall(ball)
+    } else if (ball.y > theCanvas.height || ball.y < 0) {
+      ball.angle = 360 - ball.angle
+      updateBall(ball)
+    }
   }
 }
 
