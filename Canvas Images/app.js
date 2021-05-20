@@ -1,21 +1,21 @@
 let canvas = document.getElementById('my-canvas')
 let context = canvas.getContext('2d')
 
-var points = new Array()
+let points = new Array()
 
 let speed = 5
-var p1 = { x: 20, y: 250 }
-var p2 = { x: 480, y: 250 }
+let p1 = { x: 20, y: 250 }
+let p2 = { x: 480, y: 250 }
 
-var dx = p2.x - p1.x
-var dy = p2.y - p1.y
-var distance = Math.sqrt(dx * dx + dy * dy)
-var moves = distance / speed
+let dx = p2.x - p1.x
+let dy = p2.y - p1.y
+let distance = Math.sqrt(dx * dx + dy * dy)
+let moves = distance / speed
 
-var xunits = (p2.x - p1.x) / moves
-var yunits = (p2.y - p1.y) / moves
+let xunits = (p2.x - p1.x) / moves
+let yunits = (p2.y - p1.y) / moves
 
-var ball = { x: p1.x, y: p1.y }
+let ball = { x: p1.x, y: p1.y }
 
 const updateBall = () => {
   radians = (angle * Math.PI) / 180
@@ -23,24 +23,24 @@ const updateBall = () => {
   yunits = Math.sin(radians) * speed
 }
 
-var numBalls = 100
-var maxSize = 8
-var minSize = 5
-var maxSpeed = maxSize + 5
-var balls = new Array()
+let numBalls = 100
+let maxSize = 8
+let minSize = 5
+let maxSpeed = maxSize + 5
+let balls = new Array()
 
-var tempBall
-var tempX
-var tempY
+let tempBall
+let tempX
+let tempY
 
-var tempSpeed
-var tempAngle
-var tempRadius
-var tempRadians
-var tempXunits
-var tempYunits
+let tempSpeed
+let tempAngle
+let tempRadius
+let tempRadians
+let tempXunits
+let tempYunits
 
-for (var i = 0; i < numBalls; i++) {
+for (let i = 0; i < numBalls; i++) {
   tempRadius = Math.floor(Math.random() * maxSize) + minSize
   tempX = tempRadius * 2 + (Math.floor(Math.random() * theCanvas.width) - tempRadius * 2)
   tempY = tempRadius * 2 + (Math.floor(Math.random() * theCanvas.height) - tempRadius * 2)
