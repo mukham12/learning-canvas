@@ -42,8 +42,8 @@ let tempYunits
 
 for (let i = 0; i < numBalls; i++) {
   tempRadius = Math.floor(Math.random() * maxSize) + minSize
-  tempX = tempRadius * 2 + (Math.floor(Math.random() * theCanvas.width) - tempRadius * 2)
-  tempY = tempRadius * 2 + (Math.floor(Math.random() * theCanvas.height) - tempRadius * 2)
+  tempX = tempRadius * 2 + (Math.floor(Math.random() * canvas.width) - tempRadius * 2)
+  tempY = tempRadius * 2 + (Math.floor(Math.random() * canvas.height) - tempRadius * 2)
   tempSpeed = maxSpeed - tempRadius
   tempAngle = Math.floor(Math.random() * 360)
   tempRadians = (tempAngle * Math.PI) / 180
@@ -63,7 +63,7 @@ for (let i = 0; i < numBalls; i++) {
 
 const drawScreen = () => {
   context.strokeStyle = '#000000'
-  context.strokeRect(1, 1, theCanvas.width - 2, theCanvas.height - 2)
+  context.strokeRect(1, 1, canvas.width - 2, canvas.height - 2)
   ball.x += xunits
   ball.y += yunits
   context.fillStyle = '#000000'
@@ -80,10 +80,10 @@ const drawScreen = () => {
     context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2, true)
     context.closePath()
     context.fill()
-    if (ball.x > theCanvas.width || ball.x < 0) {
+    if (ball.x > canvas.width || ball.x < 0) {
       ball.angle = 180 - ball.angle
       updateBall(ball)
-    } else if (ball.y > theCanvas.height || ball.y < 0) {
+    } else if (ball.y > canvas.height || ball.y < 0) {
       ball.angle = 360 - ball.angle
       updateBall(ball)
     }
