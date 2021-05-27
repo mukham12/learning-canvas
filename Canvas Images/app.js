@@ -3,7 +3,6 @@ let context = canvas.getContext('2d')
 
 let points = new Array()
 
-let speed = 5
 let p1 = { x: 20, y: 250 }
 let p2 = { x: 480, y: 250 }
 
