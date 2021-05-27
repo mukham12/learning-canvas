@@ -3,8 +3,6 @@ let context = canvas.getContext('2d')
 
 let points = new Array()
 
-let p1 = { x: 20, y: 250 }
-
 let dx = p2.x - p1.x
 let dy = p2.y - p1.y
 let distance = Math.sqrt(dx * dx + dy * dy)
