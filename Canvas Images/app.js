@@ -4,12 +4,10 @@ let context = canvas.getContext('2d')
 let points = new Array()
 
 let p1 = { x: 20, y: 250 }
-let p2 = { x: 480, y: 250 }
 
 let dx = p2.x - p1.x
 let dy = p2.y - p1.y
 let distance = Math.sqrt(dx * dx + dy * dy)
-let moves = distance / speed
 
 let xunits = (p2.x - p1.x) / moves
 let yunits = (p2.y - p1.y) / moves
