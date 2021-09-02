@@ -88,5 +88,4 @@ const drawScreen = () => {
 
 const gameLoop = () => {
   window.setTimeout(gameLoop, 20)
-  drawScreen()
 }
