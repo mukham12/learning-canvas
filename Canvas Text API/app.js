@@ -1,5 +1,5 @@
 const canvasApp = () => {
-  let message = 'your text'
+  let message = 'Your Text'
   let fontSize = '50'
   let fontFace = 'serif'
   let textFillColor = '#ff0000'
