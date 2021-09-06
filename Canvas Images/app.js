@@ -37,8 +37,7 @@ let tempYunits
 
 for (let i = 0; i < numBalls; i++) {
   tempRadius = Math.floor(Math.random() * maxSize) + minSize
-  tempX =
-    tempRadius * 2 + (Math.floor(Math.random() * canvas.width) - tempRadius * 2)
+  tempX = tempRadius * 2 + (Math.floor(Math.random() * canvas.width) - tempRadius * 2)
   tempY =
     tempRadius * 2 +
     (Math.floor(Math.random() * canvas.height) - tempRadius * 2)
